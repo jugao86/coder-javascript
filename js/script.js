@@ -53,14 +53,16 @@ switch (option) {
         break;
     }
 */
-/*Ej. 3
+/*Ej. 3*/
 let x = 0
 
 while (x <= 10){
     console.log(`El valor de "X" es ${x}`)
     x++
 }
-*/
+
+
+/*
 let entrada = prompt("Ingrese un texto o ESC para interrumpir");
 
 let texto = " ";
@@ -70,4 +72,4 @@ while (entrada != "ESC" && entrada != "esc") {
   entrada = prompt("Ingrese un texto o ESC para interrumpir");
 }
 
-alert(texto);
+alert(texto); */
