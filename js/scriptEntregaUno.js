@@ -5,7 +5,6 @@ var edad = Number(prompt("Ahora tu edad"));
 
 let resultado = "Hola" + " " + nombre + " " + "Tienes hasta" + " " + edad + " " + "para esconderte";
 
-
 alert(resultado);
 
 let x = 0;
