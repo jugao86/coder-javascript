@@ -68,6 +68,7 @@ function terminar(){
     } 
     alert("Gracias por tu compra" + " " + nombre);
     option = "3";
+    premiados();
 }
 
 let option = prompt(`¿Cómo quieres tu Burger hoy? \n 1: COMBO \n 2: PERSONALIZADA \n 3: Volver`);
@@ -77,10 +78,20 @@ while (option !== "3") {
   if (option === "1"){
     compracombo();
     terminar();
+    premiados();
   }
   if (option === "2"){
     comprapersonalizada();
     terminar();
   }
- 
 }
+
+
+//const nombresPremio = ["Julio", "Vanina"];
+
+//function premiados(){
+ // if (nombre === "nombresPremio"){
+ //   alert("Este usuario no paga");
+ // }
+//}
+
