@@ -1,3 +1,4 @@
+
 //Variables
 let nombre = prompt("Ingresa tu nombre");
 let personalizada;
@@ -66,9 +67,9 @@ function terminar(){
     } else if (combo === "2"){
       alert("Su Combo AMIGOS tiene un valor final de" + " " + (max + refresco + queso) * (4));
     } 
-    alert("Gracias por tu compra" + " " + nombre);
+    alert("Gracias por tu compra" + " " + nombre + "." + " " + "Guardaremos tu nombre para futuras compras");
+    //premios();
     option = "3";
-    premiados();
 }
 
 let option = prompt(`¿Cómo quieres tu Burger hoy? \n 1: COMBO \n 2: PERSONALIZADA \n 3: Volver`);
@@ -78,7 +79,6 @@ while (option !== "3") {
   if (option === "1"){
     compracombo();
     terminar();
-    premiados();
   }
   if (option === "2"){
     comprapersonalizada();
@@ -86,12 +86,7 @@ while (option !== "3") {
   }
 }
 
-
-//const nombresPremio = ["Julio", "Vanina"];
-
-//function premiados(){
- // if (nombre === "nombresPremio"){
- //   alert("Este usuario no paga");
- // }
-//}
+const nombres = ["Vanina", "Juan", "David", "Hector", "Rosa","Esmeralda", "Rebeca", "Jimena"];
+nombres.unshift(nombre);
+console.log(nombres);
 
