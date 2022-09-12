@@ -39,17 +39,33 @@ function comprapersonalizada(){
 }
 
 //Funcion COMBO
+  //object constructor
+  function Combos (nombre, precio, descripcion, imagen){
+    this.nombre = nombre;
+    this.precio = precio;
+    this.descripcion = descripcion;
+    this.imagen = imagen;
+    this.disponible = true;
+  }
+
+  
+  const ComboPareja = new Combos ("Combo Pareja", (jumbo + refresco + queso) * (2), "Disfruta con tu pareja", "imagenPareja.png");
+  const ComboAmigos = new Combos ("Combo Amigos", (max + refresco + queso) * (4), "Disfruta con tus amigos", "imagenAmigos.png");
+  
+
 function compracombo(){
   combo = prompt(
     "Con quien vas a compartir \n 1:pareja  \n 2:amigos"
   );
 
   if (combo === "1"){
-    alert("Wow! Tu combo contiene: 2 hamburguesas, 2 papas, 2 refrescos");
+    console.log(ComboPareja);
+    alert("Wow! Tu combo contiene:" + " " + ComboPareja.nombre + " " + ComboPareja.descripcion + " " + ComboPareja.imagen);
   } else if (combo === "2"){
-    alert("Tu combo contiene: 4 hamburguesas, 4 papas, 4 refrescos");
+    console.log(ComboAmigos);
+    alert("Tu combo contiene:" + " " + ComboAmigos.nombre + " " + ComboAmigos.descripcion + " " + ComboAmigos.imagen);
+    
   } 
-
 }
 
 //funcion Terminar compra
@@ -63,11 +79,11 @@ function terminar(){
     }
     //
     if (combo === "1"){
-      alert("Su Combo PEREJA tiene un valor final de" + " " + (jumbo + refresco + queso) * (2));
+      alert("Su Combo PEREJA tiene un valor final de" + " " + ComboPareja.precio);
     } else if (combo === "2"){
-      alert("Su Combo AMIGOS tiene un valor final de" + " " + (max + refresco + queso) * (4));
+      alert("Su Combo AMIGOS tiene un valor final de" + " " + ComboAmigos.precio);
     } 
-    alert("Gracias por tu compra" + " " + nombre + "." + " " + "Guardaremos tu nombre para futuras compras");
+    alert("Gracias por tu compra" + " " + nombre + ".");
     //premios();
     option = "3";
 }
@@ -86,7 +102,8 @@ while (option !== "3") {
   }
 }
 
-const nombres = ["Vanina", "Juan", "David", "Hector", "Rosa","Esmeralda", "Rebeca", "Jimena"];
+//Se agrega el nombre de usuario al array de clientes
+const nombres = [];
 nombres.unshift(nombre);
 console.log(nombres);
 
