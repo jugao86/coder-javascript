@@ -3,7 +3,6 @@
 let nombre = prompt("Ingresa tu nombre");
 let personalizada;
 let combo;
-
 let jumbo = 200;
 let max = 100;
 let jr = 50;
@@ -18,7 +17,7 @@ function comprapersonalizada(){
   if (personalizada === "1"){
     alert("Wow! tu nivel de hambre es enorme");
   } else if (personalizada === "2"){
-    alert("Jumbo, tu mejor elección");
+    alert("Max, tu mejor elección");
   } else if (personalizada === "3"){
     alert("Lo necesario para tu pequeño")
   }
@@ -71,11 +70,40 @@ function compracombo(){
 //funcion Terminar compra
 function terminar(){
     if (personalizada === "1"){
-      alert("Su pedido tiene un valor final de" + " " + (jumbo + refresco + queso));
+      const carrito = [
+        {nombre: "refresco", precio:50 },
+        {nombre: "queso", precio:10 },
+        {nombre: "jumbo", precio:200 },
+      ];
+      let resultado = carrito.reduce((accum, producto) => {
+        return accum + producto.precio;
+      }, 0);
+
+      alert("Su pedido tiene un valor final de" + " " + resultado);
+
     } else if (personalizada === "2"){
-      alert("Su pedido tiene un valor final de" + " " + (max + refresco + queso));
+      const carrito = [
+        {nombre: "refresco", precio:50 },
+        {nombre: "queso", precio:10 },
+        {nombre: "max", precio:100 },
+      ];
+      let resultado = carrito.reduce((accum, producto) => {
+        return accum + producto.precio;
+      }, 0);
+
+      alert("Su pedido tiene un valor final de" + " " + resultado);
     } else if (personalizada === "3"){
-      alert("Su pedido tiene un valor final de" + " " + (jr + refresco + queso));
+      
+      const carrito = [
+        {nombre: "refresco", precio:50 },
+        {nombre: "queso", precio:10 },
+        {nombre: "jr", precio:50 },
+      ];
+
+      let resultado = carrito.filter((producto) => 
+      producto.precio === jr);
+
+      console.log(resultado);
     }
     //
     if (combo === "1"){
@@ -84,7 +112,7 @@ function terminar(){
       alert("Su Combo AMIGOS tiene un valor final de" + " " + ComboAmigos.precio);
     } 
     alert("Gracias por tu compra" + " " + nombre + ".");
-    //premios();
+    //
     option = "3";
 }
 
@@ -107,3 +135,6 @@ const nombres = [];
 nombres.unshift(nombre);
 console.log(nombres);
 
+
+
+//Funciones de orden superior
