@@ -20,7 +20,7 @@
                 </div>
                 <div class="col-8 p-2 text-light d-flex justify-content-between">
                     <h1>
-                        <input type="text" value="">
+                        <input type="text" placeholder="Ingresa tu nombre" value="">
                     </h1>
                     <button class="btn btn-secondary px-4" id="btnGuardar">Guardar</button>
                 </div>
@@ -45,14 +45,17 @@
         <div class="container">
             <div class="row">
                 <div class="col-4" style="max-height:70vh; overflow: hidden;overflow-y: auto;">
-                    <div id="listCarrito" class="bg-light rounded p-2">
+                    <div id="" class="bg-light rounded p-2 text-center">
                         Carrito de compras
                     </div>
                 </div>
                 <div class="col-8 border-top border-bottom border-secondary" style="max-height:70vh; overflow: hidden;overflow-y: auto;">
+                    
+                    <div id="listCarrito" class="text-light border"></div>
+                    
                     <!--Card de producto-->
                     
-                    <div class="bg-light rounded overflow-hidden shadow m-2 d-flex">
+                    <div class="bg-light rounded overflow-hidden shadow m-2 d-flex d-none">
                         <img src="./" alt="imagen" class="bg-secondary img-fluid" style="min-width:200px">
                         <div class="p-2">
                             <h3 class="ProductoUno">TituloUno</h3>
@@ -71,7 +74,7 @@
                     </div>
 
                     <!--Card de producto-->
-                    <div class="bg-light rounded overflow-hidden shadow m-2 d-flex">
+                    <div class="bg-light rounded overflow-hidden shadow m-2 d-flex d-none">
                         <img src="./" alt="imagen" class="bg-secondary img-fluid" style="min-width:200px">
                         <div class="p-2">
                             <h3 class="ProductoDos">TituloDos</h3>

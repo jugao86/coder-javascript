@@ -12,13 +12,41 @@ document.getElementById("btnGuardar").addEventListener("click", myFunctionGuarda
     var element = document.getElementById("ContBienvenidoUsuario");
     element.classList.remove("d-none");
 
-    //document.querySelector(".NombreUsuario").textContent = nombre;
+    document.querySelector(".NombreUsuario").textContent = nombre;
 }
 
+let listaVacia = document.querySelector("#listCarrito");
 
+let productos = [
+  {id: 1, titulo: "Hamburguesa en combos", descripcion: "lorem ipsum 1"},
+  {id: 2, titulo: "Hamburguesa personal", descripcion: "lorem ipsum 2"},
+]
+
+for (producto of productos){
+  let contListProductos = document.createElement("div")
+  contListProductos.innerHTML= `
+                    
+                    <div class="bg-light border border-danger rounded overflow-hidden shadow m-2 d-flex text-secondary">
+                        <img src="./" alt="imagen" class="bg-secondary img-fluid" style="min-width:200px">
+                        <div class="p-2 border border-warning col">
+                            <h3 class="ProductoUno text-primary">${producto.titulo}</h3>
+                            <p>
+                            ${producto.descripcion}
+                            </p>
+                            <div class="d-flex justify-content-end">
+                                <div class="p-2">
+                                    <button>Añadir a carrito</button>
+                                </div>
+                              </div>
+                              
+                            </div>
+                    </div>
+  `;
+  listaVacia.appendChild(contListProductos)
+}
 
 //Variables
-//let nombre = prompt("Ingresa tu nombre");
+let nombre = prompt("Ingresa tu nombre");
 let personalizada;
 let combo;
 let jumbo = 200;
@@ -26,7 +54,7 @@ let max = 100;
 let jr = 50;
 let refresco = 50;
 let queso = 10;
-/*
+
 //Funcion PERSONALIZADA
 function comprapersonalizada(){
   personalizada = prompt(
@@ -152,6 +180,3 @@ while (option !== "3") {
 const nombres = [];
 nombres.unshift(nombre);
 console.log(nombres);
-
-
-*/
