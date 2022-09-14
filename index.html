@@ -8,26 +8,73 @@
 
     <title>Document</title>
 </head>
-<body class="bg-dark p-4">
+<body class="bg-dark p-2">
 
 
     <main class="">
         <div class="container">
-            <div class="row">
-                <div class=" col-12 p-4 text-light">
-                    <h1>Tienda de hamburguesas</h1>
+            <!--ContIdentificate-->
+            <div id="ContIngresarNombre" class="row">
+                <div class="col-4 p-2">
+                    <h2 class="text-secondary ">¡Bienvenido!</h2> 
+                </div>
+                <div class="col-8 p-2 text-light d-flex justify-content-between">
+                    <h1>
+                        <input type="text" value="">
+                    </h1>
+                    <button class="btn btn-secondary px-4" id="btnGuardar">Guardar</button>
+                </div>
+            </div>
+            <!--ContBienvenidaUsuario-->
+            <div id="ContBienvenidoUsuario" class="row d-none">
+               
+
+                <div class="col-4 p-2 text-light">
+                   
+                    <span class="text-secondary ">¡Bienvenido!</span> 
+                    <h2 class="NombreUsuario">...</h2>
+                </div>
+                <div class="col-8 p-2 text-light text-center">
+                    <h1 class="ComoBurger">
+                        ¿Como quieres tu burguer hoy?
+                    </h1>
                 </div>
             </div>
         </div>
 
         <div class="container">
             <div class="row">
+                <div class="col-4" style="max-height:70vh; overflow: hidden;overflow-y: auto;">
+                    <div id="listCarrito" class="bg-light rounded p-2">
+                        Carrito de compras
+                    </div>
+                </div>
                 <div class="col-8 border-top border-bottom border-secondary" style="max-height:70vh; overflow: hidden;overflow-y: auto;">
+                    <!--Card de producto-->
+                    
+                    <div class="bg-light rounded overflow-hidden shadow m-2 d-flex">
+                        <img src="./" alt="imagen" class="bg-secondary img-fluid" style="min-width:200px">
+                        <div class="p-2">
+                            <h3 class="ProductoUno">TituloUno</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            </p>
+                            <div class="d-flex">
+                                <div class="p-2 flex-grow-1">
+                                    <p>$000.00</p>
+                                </div>
+                                <div class="p-2">
+                                    <button>Añadir a carrito</button>
+                                </div>
+                              </div>
+                              
+                            </div>
+                    </div>
+
                     <!--Card de producto-->
                     <div class="bg-light rounded overflow-hidden shadow m-2 d-flex">
                         <img src="./" alt="imagen" class="bg-secondary img-fluid" style="min-width:200px">
-                        <div class="p-4">
-                            <h3>Nombre del producto</h3>
+                        <div class="p-2">
+                            <h3 class="ProductoDos">TituloDos</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                             </p>
                             <div class="d-flex">
@@ -42,11 +89,7 @@
                             </div>
                     </div>
                 </div>
-                <div class="col-4" style="max-height:70vh; overflow: hidden;overflow-y: auto;">
-                    <div class="bg-light rounded p-2">
-                        Carrito de compras
-                    </div>
-                </div>
+               
             </div>
         </div>
     </main>

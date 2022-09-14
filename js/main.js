@@ -1,6 +1,24 @@
+//
+
+
+const claseCombo = document.querySelector(".ProductoUno").textContent="Hamburguesa en combo";
+const clasePerson = document.querySelector(".ProductoDos").textContent="Hamburguesa personalizada";
+
+document.getElementById("btnGuardar").addEventListener("click", myFunctionGuardarUsuario);
+
+  function myFunctionGuardarUsuario() {
+    var element = document.getElementById("ContIngresarNombre");
+    element.classList.add("d-none");
+    var element = document.getElementById("ContBienvenidoUsuario");
+    element.classList.remove("d-none");
+
+    //document.querySelector(".NombreUsuario").textContent = nombre;
+}
+
+
 
 //Variables
-let nombre = prompt("Ingresa tu nombre");
+//let nombre = prompt("Ingresa tu nombre");
 let personalizada;
 let combo;
 let jumbo = 200;
@@ -8,7 +26,7 @@ let max = 100;
 let jr = 50;
 let refresco = 50;
 let queso = 10;
-
+/*
 //Funcion PERSONALIZADA
 function comprapersonalizada(){
   personalizada = prompt(
@@ -136,5 +154,4 @@ nombres.unshift(nombre);
 console.log(nombres);
 
 
-
-//Funciones de orden superior
+*/
