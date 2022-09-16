@@ -1,6 +1,4 @@
 //
-
-
 const claseCombo = document.querySelector(".ProductoUno").textContent="Hamburguesa en combo";
 const clasePerson = document.querySelector(".ProductoDos").textContent="Hamburguesa personalizada";
 
@@ -12,14 +10,14 @@ document.getElementById("btnGuardar").addEventListener("click", myFunctionGuarda
     var element = document.getElementById("ContBienvenidoUsuario");
     element.classList.remove("d-none");
 
-    document.querySelector(".NombreUsuario").textContent = nombre;
+    //document.querySelector(".NombreUsuario").textContent = nombre;
 }
 
 let listaVacia = document.querySelector("#listCarrito");
 
 let productos = [
-  {id: 1, titulo: "Hamburguesa en combos", descripcion: "lorem ipsum 1"},
-  {id: 2, titulo: "Hamburguesa personal", descripcion: "lorem ipsum 2"},
+  {id: 1, titulo: "Hamburguesa en combos", descripcion: "lorem ipsum 1", btn: "btnCompraCombo"},
+  {id: 2, titulo: "Hamburguesa personal", descripcion: "lorem ipsum 2", btn: "btnComprapersonalizada"},
 ]
 
 for (producto of productos){
@@ -35,7 +33,7 @@ for (producto of productos){
                             </p>
                             <div class="d-flex justify-content-end">
                                 <div class="p-2">
-                                    <button>Añadir a carrito</button>
+                                    <button id="${producto.btn}">Añadir a carrito</button>
                                 </div>
                               </div>
                               
@@ -46,7 +44,7 @@ for (producto of productos){
 }
 
 //Variables
-let nombre = prompt("Ingresa tu nombre");
+//let nombre = prompt("Ingresa tu nombre");
 let personalizada;
 let combo;
 let jumbo = 200;
@@ -56,32 +54,35 @@ let refresco = 50;
 let queso = 10;
 
 //Funcion PERSONALIZADA
-function comprapersonalizada(){
-  personalizada = prompt(
-    "Elige el tamaño de tu hamburguesa \n 1:Jumbo  \n 2:Max \n 3:Jr"
-  );
-  if (personalizada === "1"){
-    alert("Wow! tu nivel de hambre es enorme");
-  } else if (personalizada === "2"){
-    alert("Max, tu mejor elección");
-  } else if (personalizada === "3"){
-    alert("Lo necesario para tu pequeño")
-  }
+document.getElementById("btnComprapersonalizada").addEventListener("click", comprapersonalizada);
 
-  extra = prompt(
-    "Que tipo de queso te gusta? \n 1:Blanco  \n 2:Amarillo"
-  );
-
-  bebida = prompt(
-    "Una bebida para acompañar \n 1:Cola  \n 2:Sprite"
-  );
-
-  if (bebida === "1"){
-    alert("La chispa de la vida");
-  } else if (bebida === "2"){
-    alert("las cosas como son")
-  }
+  function comprapersonalizada() {
+    personalizada = prompt(
+      "Elige el tamaño de tu hamburguesa \n 1:Jumbo  \n 2:Max \n 3:Jr"
+    );
+    if (personalizada === "1"){
+      alert("Wow! tu nivel de hambre es enorme");
+    } else if (personalizada === "2"){
+      alert("Max, tu mejor elección");
+    } else if (personalizada === "3"){
+      alert("Lo necesario para tu pequeño")
+    }
+  
+    extra = prompt(
+      "Que tipo de queso te gusta? \n 1:Blanco  \n 2:Amarillo"
+    );
+  
+    bebida = prompt(
+      "Una bebida para acompañar \n 1:Cola  \n 2:Sprite"
+    );
+  
+    if (bebida === "1"){
+      alert("La chispa de la vida");
+    } else if (bebida === "2"){
+      alert("las cosas como son")
+    }
 }
+
 
 //Funcion COMBO
   //object constructor
@@ -98,20 +99,23 @@ function comprapersonalizada(){
   const ComboAmigos = new Combos ("Combo Amigos", (max + refresco + queso) * (4), "Disfruta con tus amigos", "imagenAmigos.png");
   
 
-function compracombo(){
-  combo = prompt(
-    "Con quien vas a compartir \n 1:pareja  \n 2:amigos"
-  );
-
-  if (combo === "1"){
-    console.log(ComboPareja);
-    alert("Wow! Tu combo contiene:" + " " + ComboPareja.nombre + " " + ComboPareja.descripcion + " " + ComboPareja.imagen);
-  } else if (combo === "2"){
-    console.log(ComboAmigos);
-    alert("Tu combo contiene:" + " " + ComboAmigos.nombre + " " + ComboAmigos.descripcion + " " + ComboAmigos.imagen);
-    
-  } 
+  document.getElementById("btnCompraCombo").addEventListener("click", compraCombo);
+  function compraCombo() {
+    combo = prompt(
+      "Con quien vas a compartir \n 1:pareja  \n 2:amigos"
+    );
+  
+    if (combo === "1"){
+      console.log(ComboPareja);
+      alert("Wow! Tu combo contiene:" + " " + ComboPareja.nombre + " " + ComboPareja.descripcion + " " + ComboPareja.imagen);
+    } else if (combo === "2"){
+      console.log(ComboAmigos);
+      alert("Tu combo contiene:" + " " + ComboAmigos.nombre + " " + ComboAmigos.descripcion + " " + ComboAmigos.imagen);
+      
+    } 
+  
 }
+
 
 //funcion Terminar compra
 function terminar(){
@@ -161,8 +165,10 @@ function terminar(){
     //
     option = "3";
 }
+//Inicio
+//let option = prompt(`¿Cómo quieres tu Burger hoy? \n 1: COMBO \n 2: PERSONALIZADA \n 3: Volver`);
 
-let option = prompt(`¿Cómo quieres tu Burger hoy? \n 1: COMBO \n 2: PERSONALIZADA \n 3: Volver`);
+
 
 //bucle while
 while (option !== "3") {
@@ -174,9 +180,10 @@ while (option !== "3") {
     comprapersonalizada();
     terminar();
   }
-}
+}/*
 
 //Se agrega el nombre de usuario al array de clientes
 const nombres = [];
 nombres.unshift(nombre);
 console.log(nombres);
+*/
