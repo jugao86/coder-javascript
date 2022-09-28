@@ -2,17 +2,26 @@
 const claseCombo = document.querySelector(".ProductoUno").textContent="Hamburguesa en combo";
 const clasePerson = document.querySelector(".ProductoDos").textContent="Hamburguesa personalizada";
 
-document.getElementById("btnGuardar").addEventListener("click", myFunctionGuardarUsuario);
-
-  function myFunctionGuardarUsuario() {
-    var element = document.getElementById("ContIngresarNombre");
-    element.classList.add("d-none");
-    var element = document.getElementById("ContBienvenidoUsuario");
-    element.classList.remove("d-none");
-
-    //document.querySelector(".NombreUsuario").textContent = nombre;
+class Cliente{
+  constructor(nombre){
+    this.nombre = nombre;
+  }
 }
 
+
+let boton = document.getElementById("btnGuardar");
+boton.addEventListener("click", cargarCliente);
+
+function cargarCliente(){
+  let nombre = document.getElementById("nombre").value;
+  let cliente1 = new Cliente(nombre);
+  console.log(cliente1);
+  mostrarCliente(cliente1);
+}
+
+
+
+//
 let listaVacia = document.querySelector("#listCarrito");
 
 let productos = [
@@ -43,6 +52,13 @@ for (producto of productos){
   listaVacia.appendChild(contListProductos)
 }
 
+
+//Funcion PERSONALIZADA
+document.getElementById("btnComprapersonalizada").addEventListener("click", comprapersonalizada);
+
+
+document.getElementById("btnCompraCombo").addEventListener("click", compraCombo);
+
 //Variables
 //let nombre = prompt("Ingresa tu nombre");
 let personalizada;
@@ -53,8 +69,6 @@ let jr = 50;
 let refresco = 50;
 let queso = 10;
 
-//Funcion PERSONALIZADA
-document.getElementById("btnComprapersonalizada").addEventListener("click", comprapersonalizada);
 
   function comprapersonalizada() {
     personalizada = prompt(
@@ -99,7 +113,6 @@ document.getElementById("btnComprapersonalizada").addEventListener("click", comp
   const ComboAmigos = new Combos ("Combo Amigos", (max + refresco + queso) * (4), "Disfruta con tus amigos", "imagenAmigos.png");
   
 
-  document.getElementById("btnCompraCombo").addEventListener("click", compraCombo);
   function compraCombo() {
     combo = prompt(
       "Con quien vas a compartir \n 1:pareja  \n 2:amigos"
@@ -171,17 +184,17 @@ function terminar(){
 
 
 //bucle while
-while (option !== "3") {
-  if (option === "1"){
-    compracombo();
-    terminar();
-  }
-  if (option === "2"){
-    comprapersonalizada();
-    terminar();
-  }
-}/*
-
+// while (option !== "3") {
+//   if (option === "1"){
+//     compracombo();
+//     terminar();
+//   }
+//   if (option === "2"){
+//     comprapersonalizada();
+//     terminar();
+//   }
+// }
+/*
 //Se agrega el nombre de usuario al array de clientes
 const nombres = [];
 nombres.unshift(nombre);
